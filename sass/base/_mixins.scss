@@ -1,0 +1,17 @@
+@mixin centeredFlex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin font($fs, $fw, $ls, $lh) {
+  font-size: $fs;
+  font-weight: $fw;
+  letter-spacing: $ls;
+  line-height: $lh;
+}
+
+@mixin centeredMarg() {
+  margin-right: auto;
+  margin-left: auto;
+}

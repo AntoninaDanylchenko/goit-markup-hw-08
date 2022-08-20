@@ -1,0 +1,34 @@
+.social {
+  display: flex;
+  gap: 10px;
+
+  @include centeredMarg;
+  max-width: 206px;
+}
+
+.social__item {
+  width: calc((100% - 30px) / 4);
+}
+.social__link {
+  @include centeredFlex();
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  transition: color var(--hover-time) var(--hover-bezier),
+    background-color var(--hover-time) var(--hover-bezier);
+
+  color: var(--icon-color);
+
+  &:hover {
+    background-color: var(--brand-color);
+    color: var(--white-color);
+  }
+}
+.social__icon {
+  width: 20px;
+
+  fill: currentColor;
+}
