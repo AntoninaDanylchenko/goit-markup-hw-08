@@ -1,29 +1,23 @@
 .footer {
-  max-width: 1600px;
   @include centeredMarg;
 
-  padding-top: 60px;
+  padding-top: 35px;
   padding-bottom: 60px;
 
   background-color: var(--dark-fon);
-
-  & > .container {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-  }
+  text-align: center;
 }
-
 .footer__logo {
   margin-bottom: 20px;
   display: block;
 
   color: var(--white-color);
   font-family: 'Raleway';
-  @include font(26px, 700, null, 1.2);
+  @include font(24px, 700, null, 1.2);
 }
 .adress {
   @include font(14px, 400, null, 1.71);
+  margin-bottom: 60px;
 }
 .adress__link {
   transition: color var(--hover-time) var(--hover-bezier);
@@ -38,15 +32,13 @@
 .adress__link--color {
   color: var(--footer-contact-color);
 }
-
 .adress__item + .adress__item {
-  margin-top: 9px;
+  margin-top: 8px;
 }
 .footer__social {
-  margin-left: 70px;
+  margin-bottom: 60px;
 }
 .footer__title {
-  margin-top: 0;
   margin-bottom: 20px;
 
   @include font(14px, 700, null, 1.14);
@@ -54,28 +46,19 @@
 
   color: #ffffff;
 }
-
 .social__link--color {
   color: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-.mailing {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 570px;
-  margin-left: 93px;
-
-  & > .form__field {
-    margin-bottom: 0;
-  }
-}
-
 .mailing__input {
   margin: 0;
-  padding: 15px 16px;
-  width: 358px;
+  margin-bottom: 20px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  max-width: 450px;
+
   background-color: inherit;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -97,8 +80,8 @@
     color: var(--footer-contact-color);
   }
 }
-
 .mailing__button {
+  @include centeredMarg();
   display: flex;
   justify-content: center;
   gap: 10px;

@@ -1,26 +1,48 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  z-index: 1;
-
-  transform: translate(-50%);
-
-  min-width: 1600px;
+  height: 60px;
 
   background-color: var(--white-color);
   border-bottom: 1px solid var(--border-header-color);
 
-  & > .container {
-    display: flex;
+  @media screen and (min-width: 480px) {
+    width: var(--mobile);
+    @include centeredMarg;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: relative;
+  }
+  @media screen and (min-width: 768px) {
+    width: var(--tablet);
+  }
+  @media screen and (min-width: 1200px) {
+    width: var(--desktop);
+  }
+
+  &__menu {
+    background-color: var(--white-color);
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      width: 100%;
+      height: 760px;
+      opacity: 0;
+    }
+    &.is-open {
+      @media screen and (max-width: 768px) {
+        opacity: 1;
+      }
+    }
   }
 }
-
 .navigation {
   display: flex;
-  align-items: center;
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+  }
 }
-
 .logo {
   color: var(--black-color);
 
@@ -30,78 +52,30 @@
 .logo--brand {
   color: var(--brand-color);
 }
-/* site nav */
-.navigation__list {
-  display: flex;
 
-  margin-left: 93px;
-  gap: 50px;
-}
-
-.navigation__link {
-  display: block;
-  position: relative;
-
-  padding-top: 32px;
-  padding-bottom: 32px;
-
-  transition: color var(--hover-time) var(--hover-bezier);
-
-  color: var(--title-text-color);
-
-  @include font(14px, 500, 0.02em, 1.14);
-
-  &:hover,
-  &:focus {
-    color: var(--brand-color);
-  }
-}
-
-.navigation__link--current {
-  color: var(--brand-color);
-
-  &::after {
-    content: '';
-    display: block;
-
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-
-    width: 100%;
-    height: 4px;
-
-    background: var(--brand-color);
-    border-radius: 2px;
-  }
-}
-
-/* contacts nav */
-.contacts {
-  display: flex;
-  margin-left: auto;
-  gap: 50px;
-}
-
-.contacts__link {
+.header__mobile {
   display: inline-flex;
-  align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
 
-  transition: color var(--hover-time) var(--hover-bezier);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 
-  color: var(--text-color);
+  width: 40px;
+  height: 40px;
 
-  @include font(14px, 500, 0.02em, 1.14);
+  @include centeredFlex();
 
-  &:hover,
-  &:focus {
-    color: var(--brand-color);
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }
-.contacts__icon {
-  margin-right: 10px;
-
-  fill: currentColor;
+.header__mobile .icon-close {
+  opacity: 0;
+}
+.header__mobile.is-open .icon-close {
+  opacity: 1;
+}
+.header__mobile.is-open .icon-menu {
+  opacity: 0;
 }

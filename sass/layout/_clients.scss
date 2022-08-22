@@ -1,9 +1,12 @@
 .clients {
   display: flex;
   gap: 30px;
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
 }
 .clients__item {
-  width: calc((100% - 150px) / 6);
+  width: calc((100% - 30px) / 2);
 }
 .clients__link {
   @include centeredFlex();

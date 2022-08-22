@@ -5,19 +5,15 @@
 @import './base/mixins';
 
 @import './components/container';
+@import './components/sections';
 @import './components/btn';
 @import './components/social';
 @import './components/modal';
 
 @import './layout/header';
 @import './layout/hero';
-
-@import './components/sections';
-
 @import './layout/features';
 @import './layout/we-do';
 @import './layout/comand';
 @import './layout/clients';
 @import './layout/footer';
-
-@import './layout/portfolio';
