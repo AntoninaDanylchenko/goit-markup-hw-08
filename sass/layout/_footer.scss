@@ -58,6 +58,7 @@
   padding-bottom: 15px;
   padding-left: 16px;
   max-width: 450px;
+  @include centeredMarg();
 
   background-color: inherit;
 
