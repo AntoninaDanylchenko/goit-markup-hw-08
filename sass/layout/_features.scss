@@ -1,6 +1,16 @@
-.feature__item:not(:last-child) {
-  margin-bottom: 30px;
+.feature {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.feature__item {
   width: 100%;
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 30px) / 2);
+  }
+  @media screen and (min-width: 1200px) {
+    width: 270px;
+  }
 }
 .feature__container {
   @include centeredFlex();
