@@ -1,0 +1,177 @@
+.header {
+  height: 60px;
+  padding-top: 10px;
+  padding-bottom: 16px;
+  position: relative;
+
+  background-color: var(--white-color);
+  border-bottom: 1px solid var(--border-header-color);
+
+  width: 100%;
+  @include centeredMarg();
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  & > .container {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-width: 1600px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+
+    transform: translate(-50%);
+  }
+
+  &__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  color: var(--black-color);
+
+  @include font(26px, 700, null, 1.2);
+  font-family: 'Raleway';
+}
+.logo--brand {
+  color: var(--brand-color);
+}
+
+.header__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  width: 40px;
+  height: 40px;
+
+  @include centeredFlex();
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.mobile-menu {
+  background-color: var(--white-color);
+
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+
+  top: 0;
+  left: 0;
+
+  opacity: 1;
+  > .container {
+    height: 100%;
+
+    position: relative;
+    padding: 48px 24px;
+  }
+}
+.icon-menu,
+.icon-close {
+  fill: currentColor;
+}
+.menu-open {
+  transition: color var(--hover-time) var(--hover-bezier);
+  &:hover,
+  &:focus {
+    color: var(--brand-color);
+  }
+}
+.menu-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  transition: color var(--hover-time) var(--hover-bezier);
+
+  &:hover,
+  &:focus {
+    color: var(--brand-color);
+  }
+}
+.mobile-nav {
+  margin-bottom: 270px;
+}
+.mobile-nav__link {
+  display: block;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include font(40px, 500, 0.02em, 1.17);
+  color: var(--title-text-color);
+
+  transition: color var(--hover-time) var(--hover-bezier);
+
+  &:hover,
+  &:focus {
+    color: var(--brand-color);
+  }
+}
+.mobile-contact {
+  margin-bottom: 48px;
+}
+.mobile-contact__tel {
+  display: block;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include font(30px, 500, 0.02em, 1.17);
+
+  color: var(--brand-color);
+
+  @media screen and (min-width: 480px) {
+    @include font(34px, 500, 0.02em, 1.17);
+  }
+}
+.mobile-contact__mail {
+  display: block;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include font(24px, 500, 0.02em, 1.17);
+}
+.mobile-social {
+  display: flex;
+}
+.mobile-social__item {
+  @include font(18px, 500, 0.02em, 1.22);
+
+  color: var(--brand-color);
+}
+.mobile-social__item:not(:first-child) {
+  padding-left: 10px;
+  border-left: 1px solid rgba(33, 33, 33, 0.2);
+}
+.mobile-social__item:not(:last-child) {
+  padding-right: 10px;
+}

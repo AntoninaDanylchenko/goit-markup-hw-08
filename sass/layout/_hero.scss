@@ -4,28 +4,61 @@
   background-color: var(--dark-fon);
 
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(../images/hero.jpg);
+    url(../images/hero-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   text-align: center;
 
+  width: 100%;
   height: 400px;
   padding-top: 118px;
   padding-bottom: 118px;
+
+  @include retina2() {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-mobile@2x.jpg);
+  }
+  @include retina3() {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-mobile@3x.jpg);
+  }
 
   @media screen and (min-width: 480px) {
     max-width: var(--mobile);
   }
   @media screen and (min-width: 768px) {
     max-width: var(--tablet);
+
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-tablet.jpg);
+    @include retina2() {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero-tablet@2x.jpg);
+    }
+    @include retina3() {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero-tablet@3x.jpg);
+    }
   }
   @media screen and (min-width: 1200px) {
     max-width: 1600px;
     height: 600px;
     padding-top: 120px;
     padding-bottom: 120px;
+
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-desktop.jpg);
+
+    @include retina2() {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero-desktop@2x.jpg);
+    }
+    @include retina3() {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero-desktop@3x.jpg);
+    }
   }
   &__title {
     margin-top: 0;
@@ -35,16 +68,15 @@
     color: var(--white-color);
 
     text-transform: uppercase;
+    @include font(24px, 900, 0.06em, 1.62);
 
     @media screen and (min-width: 480px) {
-      width: 360px;
+      max-width: 360px;
       @include font(26px, 900, 0.06em, 1.62);
     }
-    // @media screen and (min-width: 768px) {
-    //   width: var(--tablet);
-    // }
+
     @media screen and (min-width: 1200px) {
-      width: 696px;
+      max-width: 696px;
       @include font(44px, 900, 0.06em, 1.36);
     }
   }
