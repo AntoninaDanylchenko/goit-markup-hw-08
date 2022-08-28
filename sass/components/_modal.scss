@@ -31,9 +31,8 @@
 .modal {
   position: relative;
   @include centeredMarg();
-
-  height: 609px;
   max-width: 405px;
+  height: 609px;
 
   padding: 40px;
   background-color: var(--white-color);
@@ -42,11 +41,11 @@
   border-radius: 4px;
 
   @media screen and (min-width: 768px) {
-    width: 450px;
+    max-width: 450px;
   }
 
   @media screen and (min-width: 1200px) {
-    width: 528px;
+    max-width: 528px;
     height: 581px;
 
     position: absolute;
@@ -198,6 +197,10 @@
   @include centeredFlex();
   @include font(11px, 400, 0.03em, 1.71);
 
+  @media screen and( min-width: 768px) {
+    @include font(12px, null, null, 1.71);
+  }
+
   @media screen and( min-width: 1200px) {
     @include font(14px, null, null, 1.71);
   }
@@ -242,7 +245,6 @@
 .policy__link {
   position: relative;
   color: var(--brand-color);
-  @include font(11px, 400, 0.03em, 1.71);
 
   &::after {
     content: '';
