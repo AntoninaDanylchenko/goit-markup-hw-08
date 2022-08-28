@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -54,7 +55,10 @@
 }
 .portfolio-link {
   width: 100%;
-  display: block;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
 
   color: var(--text-color);
 
@@ -69,7 +73,6 @@
   position: relative;
 
   width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 .paragraf-action {
@@ -86,7 +89,7 @@
   color: #ffffff;
   background-color: var(--portfolio-action-color);
 
-  transform: translateY(+100%);
+  transform: translateY(+101%);
   transition: transform var(--hover-time) var(--hover-bezier);
 
   .portfolio-link:hover &,
@@ -102,6 +105,8 @@
   }
 }
 .portfolio-caption {
+  flex-grow: 1;
+
   padding: 20px 24px;
 
   border: 1px solid #eeeeee;

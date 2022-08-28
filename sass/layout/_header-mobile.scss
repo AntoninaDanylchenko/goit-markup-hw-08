@@ -75,6 +75,8 @@
   top: 0;
   left: 0;
 
+  overflow-y: scroll;
+
   opacity: 1;
   > .container {
     height: 100%;
