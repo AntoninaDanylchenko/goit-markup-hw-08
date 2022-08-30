@@ -15,6 +15,7 @@
 
   transition: opacity var(--hover-time) var(--hover-bezier),
     visibility var(--hover-time) var(--hover-bezier);
+
   @media screen and (min-width: 768px) {
     padding-top: 208px;
   }
@@ -40,6 +41,10 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  transform: scale(1);
+
+  transition: transform var(--hover-time) var(--hover-bezier);
+
   @media screen and (min-width: 768px) {
     max-width: 450px;
   }
@@ -52,9 +57,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform var(--hover-time) var(--hover-bezier);
   }
   .backdrop.is-hidden & {
+    transform: scale(0.5);
+
     @media screen and (min-width: 1200px) {
       transform: translate(-50%, -50%) scale(0.5);
     }

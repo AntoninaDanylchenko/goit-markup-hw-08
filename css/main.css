@@ -110,7 +110,7 @@ button {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-@media screen and (min-width: 1200) {
+@media screen and (min-width: 1200px) {
   .section {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -233,6 +233,12 @@ button {
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform var(--hover-time) var(--hover-bezier);
+  transition: -webkit-transform var(--hover-time) var(--hover-bezier);
+  transition: transform var(--hover-time) var(--hover-bezier);
+  transition: transform var(--hover-time) var(--hover-bezier), -webkit-transform var(--hover-time) var(--hover-bezier);
 }
 @media screen and (min-width: 768px) {
   .modal {
@@ -248,11 +254,11 @@ button {
     left: 50%;
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
-    -webkit-transition: -webkit-transform var(--hover-time) var(--hover-bezier);
-    transition: -webkit-transform var(--hover-time) var(--hover-bezier);
-    transition: transform var(--hover-time) var(--hover-bezier);
-    transition: transform var(--hover-time) var(--hover-bezier), -webkit-transform var(--hover-time) var(--hover-bezier);
   }
+}
+.backdrop.is-hidden .modal {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
 }
 @media screen and (min-width: 1200px) {
   .backdrop.is-hidden .modal {
@@ -654,22 +660,11 @@ button {
   margin-right: auto;
   margin-left: auto;
 }
-@media screen and (min-width: 480px) {
-  .header {
-    width: 480px;
-  }
-}
 @media screen and (min-width: 768px) {
   .header {
-    width: 768px;
     height: 80px;
     padding-top: 0;
     padding-bottom: 0;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .header {
-    width: 1200px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -742,6 +737,12 @@ button {
   overflow-y: scroll;
   opacity: 1;
   padding: 10px 25px 48px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: opacity var(--hover-time) var(--hover-bezier), visibility var(--hover-time) var(--hover-bezier), -webkit-transform var(--hover-time) var(--hover-bezier);
+  transition: opacity var(--hover-time) var(--hover-bezier), visibility var(--hover-time) var(--hover-bezier), -webkit-transform var(--hover-time) var(--hover-bezier);
+  transition: transform var(--hover-time) var(--hover-bezier), opacity var(--hover-time) var(--hover-bezier), visibility var(--hover-time) var(--hover-bezier);
+  transition: transform var(--hover-time) var(--hover-bezier), opacity var(--hover-time) var(--hover-bezier), visibility var(--hover-time) var(--hover-bezier), -webkit-transform var(--hover-time) var(--hover-bezier);
 }
 .mobile-menu > .container {
   display: -webkit-box;
@@ -755,6 +756,11 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.mobile-menu.is-hidden {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0;
 }
 
 .icon-menu,
@@ -793,6 +799,9 @@ button {
   transition: color var(--hover-time) var(--hover-bezier);
 }
 .mobile-nav__link:hover, .mobile-nav__link:focus {
+  color: var(--brand-color);
+}
+.mobile-nav__link.current {
   color: var(--brand-color);
 }
 
@@ -1021,7 +1030,7 @@ button {
   text-transform: uppercase;
   color: var(--title-text-color);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .feature__title {
     text-align: center;
   }
@@ -1190,6 +1199,7 @@ button {
 @media screen and (min-width: 1200px) {
   .footer {
     padding-top: 60px;
+    text-align: left;
   }
 }
 @media screen and (min-width: 768px) {

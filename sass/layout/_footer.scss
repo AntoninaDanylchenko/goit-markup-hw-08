@@ -8,6 +8,7 @@
   text-align: center;
   @media screen and (min-width: 1200px) {
     padding-top: 60px;
+    text-align: left;
   }
   & > .container {
     @media screen and (min-width: 768px) {
@@ -62,12 +63,14 @@
 }
 .adress__item + .adress__item {
   margin-top: 8px;
+
   @media screen and (min-width: 1200px) {
     margin-top: 9px;
   }
 }
 .footer__social {
   margin-bottom: 60px;
+
   @media screen and (min-width: 1200px) {
     margin-bottom: 0;
     margin-left: 70px;

@@ -10,18 +10,13 @@
   width: 100%;
   @include centeredMarg();
 
-  @media screen and (min-width: 480px) {
-    width: 480px;
-  }
   @media screen and (min-width: 768px) {
-    width: 768px;
+    // width: 768px;
     height: 80px;
     padding-top: 0;
     padding-bottom: 0;
   }
-  @media screen and (min-width: 1200px) {
-    width: 1200px;
-  }
+
   & > .container {
     @media screen and (min-width: 768px) {
       display: flex;
@@ -79,6 +74,10 @@
 
   opacity: 1;
   padding: 10px 25px 48px;
+  transform: scale(1);
+
+  transition: transform var(--hover-time) var(--hover-bezier),
+    opacity var(--hover-time) var(--hover-bezier), visibility var(--hover-time) var(--hover-bezier);
 
   & > .container {
     display: flex;
@@ -87,6 +86,10 @@
     height: 100%;
 
     justify-content: space-between;
+  }
+  &.is-hidden {
+    transform: scale(0.9);
+    opacity: 0;
   }
 }
 .icon-menu,
@@ -125,6 +128,9 @@
 
   &:hover,
   &:focus {
+    color: var(--brand-color);
+  }
+  &.current {
     color: var(--brand-color);
   }
 }
